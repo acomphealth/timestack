@@ -25,7 +25,7 @@ jobs:
           command: |
             python3 -m venv venv
             . venv/bin/activate
-            pip install -r requirements.txt && pip install -U pytest
+            pip install -r requirements.txt && pip install -U coverage pytest
 
       - save_cache:
           paths:
@@ -36,8 +36,8 @@ jobs:
           name: run coverage
           command: |
             . venv/bin/activate
-            $HOME/.local/bin/coverage run -m pytest
-            $HOME/.local/bin/coverage report
+            coverage run -m pytest
+            coverage report
 
       - store_artifacts:
           path: coverage-reports
