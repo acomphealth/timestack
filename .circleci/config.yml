@@ -38,8 +38,8 @@ jobs:
             . venv/bin/activate
             coverage run timestack
             coverage report
-            coverage html
             coverage-badge -o htmlcov/coverage.svg
+            coverage html
 
       - store_artifacts:
           path: htmlcov
