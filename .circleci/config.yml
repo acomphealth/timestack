@@ -38,7 +38,6 @@ jobs:
             . venv/bin/activate
             coverage run -m timestack
             coverage report
-            coverage html
 
       - store_artifacts:
           path: htmlcov
