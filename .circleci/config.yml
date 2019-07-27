@@ -36,18 +36,20 @@ jobs:
           name: run coverage
           command: |
             . venv/bin/activate
-            coverage run -m pytest
+            coverage run -m timestack
             coverage report
+            coverage html
 
       - store_artifacts:
-          path: coverage-reports
-          destination: coverage-reports
+          path: htmlcov
+          destination: htmlcov
 
       - run:
           name: run tests
           command: |
             . venv/bin/activate
-            pytest
+            mkdir test-reports
+            pytest --junitxml=test-reports/junit.xml
 
       - store_artifacts:
           path: test-reports
