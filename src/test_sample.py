@@ -7,4 +7,4 @@ def test_pass():
 
 
 def test_fail():
-	assert func(3) == 5
+	assert func(3) != 5
