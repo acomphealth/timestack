@@ -39,7 +39,7 @@ jobs:
             coverage run timestack
             coverage report
             coverage html
-            coverage-badge -o coverage.svg
+            coverage-badge -o htmlcov/coverage.svg
 
       - store_artifacts:
           path: htmlcov
