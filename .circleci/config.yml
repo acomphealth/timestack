@@ -36,7 +36,7 @@ jobs:
           name: run coverage
           command: |
             . venv/bin/activate
-            coverage run -m timestack
+            coverage run timestack
             coverage report
             coverage html
 
