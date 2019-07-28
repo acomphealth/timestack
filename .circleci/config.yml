@@ -25,18 +25,12 @@ jobs:
           command: |
             python3 -m venv venv
             . venv/bin/activate
-            pip install -r requirements.txt && pip install -U coverage coverage-badge pytest
+            pip install -r requirements.txt && pip install -U coverage coverage-badge pytest pytest-cov
 
       - save_cache:
           paths:
             - ./venv
           key: v1-dependencies-{{ checksum "requirements.txt" }}
-
-      - run:
-          name: test dir
-          command: |
-            ls
-            pwd
 
       - run:
           name: run tests
